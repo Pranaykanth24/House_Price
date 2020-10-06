@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flask app</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/styles.css')}}">
+</head>
+
+<body>
+ <div class="login">
+	<h1>PE Prediction</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+    	<input type="text" name="house_age" placeholder="house_age" required="true" />
+        <input type="text" name="distance_to_nearby_stores" placeholder=distance_to_nearby_stores" required="true" />
+		<input type="text" name="no_of_nearby_stores" placeholder="no_of_nearby_stores" required="true" />
+
+        <button> Predict </button>
+    </form>
+
+   <br>
+   <br>
+
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
